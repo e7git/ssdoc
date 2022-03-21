@@ -1,0 +1,110 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+.login {
+    width: 25%;
+    margin: 10% auto;
+    font-size: 15px;
+}
+.login div {
+    padding-top: 4%;
+}
+.login h2 {
+    text-align: center;
+}
+#catalog{
+    position: fixed;
+    width: 250px;
+    height: 100%;
+    top:45px;
+    background-color: #f7f9fc;
+    padding-top: 10px;
+    overflow: auto;
+}
+#content{
+    margin-left: 300px;
+}
+.anchor {
+    padding-left: 14px;
+    padding-top: 14px;
+    border-right: 1px solid #eee;
+    height: 100%;
+    overflow: auto;
+}
+.anchor p {
+    color: #15a230;
+    text-align: right;
+}
+.anchor .anchor-content {
+    overflow: auto;
+}
+.anchor li{
+    list-style: none;
+    width: 100%;
+}
+.anchor li .item_H2{
+    font-size: 17px;
+    margin-left: 0;
+}
+.anchor li .item_H3{
+    padding-left: 15px;
+    font-size: 15px;
+}
+.anchor li .nav_item.current{
+    color: white;
+    background-color: #5cc26f;
+}
+.anchor a:hover {
+    color: #fff;
+    background-color:  #327dfa;
+}
+.anchor a {
+    width: 95%;
+    text-decoration: none;
+    display: block;
+    border-radius: 4px;
+    padding: 2px;
+    color: #327dfa;
+}
+.item {
+    display: flex;
+}
+.flex {
+    display: flex;
+}
+.left{
+    flex:1;
+}
+.right{
+    flex:1;
+    margin: 45px 20px;
+    height: fit-content;
+}
+#hide {
+    display: none;
+}
+.nickname {
+    float: right;
+}
+.exit-login {
+    margin-left: 20px;
+}
+.logo {
+    cursor: pointer;
+    font-size: 16px;
+}
+.foot {
+    font-size: 10px;
+    text-align: center;
+}
+.head {
+    position: fixed;
+    width: 100%;
+}
+.no-border {
+    border: none;
+}
+.padding-top {
+    padding-top: 50px;
+}
