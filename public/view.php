@@ -17,13 +17,13 @@ $user = [];
 $nickArea = '';
 if (!empty($_SESSION['user']) && !empty($_SESSION['expire']) && is_numeric($_SESSION['expire']) && $_SESSION['expire'] > time()) {
     $user = json_decode($_SESSION['user'], true);
-    $nickArea = '<span class="nickname">欢迎你，' . ($user['nick'] ?? '') . '<button onclick="window.location.href=\'view.php?exit=1\'" class="btn btn-danger btn-mini exit-login" type="button">退出登录</button></span>';
+    $nickArea = '<span class="nickname">欢迎你，' . ($user['nick'] ?? '') . '<button onclick="window.location.href=\'/?exit=1\'" class="btn btn-danger btn-mini exit-login" type="button">退出登录</button></span>';
 }
 
 // 退出登录
 if (!empty($_GET['exit'])) {
     session_destroy();
-    header('Location:view.php');
+    header('Location:/');
     die;
 }
 
@@ -58,7 +58,7 @@ echo <<<EOF
     </head>
     <body>
         <div class="panel panel-primary no-border">
-            <div class="panel-heading head"><span class="logo" onclick="window.location.href='view.php'">{$application}</span>{$nickArea}</div>
+            <div class="panel-heading head"><span class="logo" onclick="window.location.href='/'">{$application}</span>{$nickArea}</div>
             <div class="panel-body padding-top">
 EOF;
 
@@ -72,7 +72,7 @@ if (!empty($post['user']) && !empty($post['pass'])) {
     } else {
         $_SESSION['error'] = '用户名或密码不正确';
     }
-    header('Location:view.php');
+    header('Location:/');
     die;
 }
 
@@ -89,7 +89,7 @@ EOF;
     }
 
     echo <<<EOF
-<form action="view.php" method="post">
+<form action="/" method="post">
     <div class="login">
         <h2 class="login-title">{$application}</h2>
         <div class="input-group">
@@ -158,7 +158,7 @@ if ($files) {
     $i = 1;
     foreach ($files as $index => $file) {
         $handle = fopen($file, 'r');
-        echo sprintf('<li class="list-group-item"><a href="view.php?module=%s">%d、 %s</a></li>', $index, $i, substr(fgets($handle), 2)), PHP_EOL;
+        echo sprintf('<li class="list-group-item"><a href="/?module=%s">%d、 %s</a></li>', $index, $i, substr(fgets($handle), 2)), PHP_EOL;
         fclose($handle);
         ++$i;
     }
